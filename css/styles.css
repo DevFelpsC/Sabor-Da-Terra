@@ -48,6 +48,8 @@
 html {
   scroll-behavior: smooth;
   color-scheme: light;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -55,6 +57,7 @@ body {
   background-color: var(--color-earth-bg);
   color: var(--color-brand-espresso);
   overflow-x: hidden;
+  max-width: 100vw;
   -webkit-font-smoothing: antialiased;
   background-image: 
     radial-gradient(circle at 10% 20%, rgba(223, 164, 55, 0.04) 0%, transparent 40%),
@@ -418,9 +421,35 @@ body {
   border-color: var(--color-brand-saffron);
 }
 
-/* Floating WhatsApp Pulse */
+/* Floating WhatsApp Pulse & Mobile Positioning Coordination */
 .floating-wa-btn {
   animation: pulseWaGlow 3s infinite ease-in-out;
+  transition: bottom 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (max-width: 639px) {
+  .floating-wa-btn {
+    bottom: 1.25rem !important;
+    right: 1rem !important;
+    padding: 0.75rem !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4) !important;
+  }
+  
+  .floating-wa-btn iconify-icon {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  /* When mobile sticky cart bar is active, safely lift the floating WA button above the bar */
+  body.has-mobile-cart .floating-wa-btn {
+    bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  /* Give body extra bottom padding so content and buttons are never hidden behind sticky bar */
+  body.has-mobile-cart {
+    padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 /* ==========================================================================
@@ -1220,13 +1249,28 @@ body {
   box-shadow: -12px 0 35px rgba(24, 18, 14, 0.12);
   z-index: 100;
   transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .nav-drawer-panel.open {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (max-width: 480px) {
+  .nav-drawer-panel {
+    max-width: 100vw;
+    width: 100vw;
+    right: 0;
+    left: 0;
+    border-left: none;
+  }
 }
 
 .nav-drawer-link {

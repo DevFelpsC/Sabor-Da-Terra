@@ -50,34 +50,35 @@
        MINIMAL FLOATING HEADER: BACK TO STORE BUTTON & UNIVERSAL CART TRIGGER
        ========================================================================= -->
   <a href="index.html"
-    class="fixed top-5 left-5 z-50 group flex items-center gap-3 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-black/60 hover:bg-black/85 text-white backdrop-blur-md border border-white/20 hover:border-[#DFA437] transition-all duration-300 shadow-2xl hover:scale-105"
+    class="fixed top-4 sm:top-5 left-3 sm:left-5 z-50 group flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-3 rounded-full bg-black/60 hover:bg-black/85 text-white backdrop-blur-md border border-white/20 hover:border-[#DFA437] transition-all duration-300 shadow-2xl hover:scale-105"
     title="Voltar para a Loja">
     <div
-      class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#DFA437] group-hover:text-black transition-colors">
+      class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#DFA437] group-hover:text-black transition-colors shrink-0">
       <iconify-icon icon="solar:arrow-left-linear" width="16"></iconify-icon>
     </div>
     <div class="flex flex-col text-left">
-      <span class="text-[9px] uppercase tracking-widest text-[#DFA437] font-serif-vintage leading-tight">
+      <span class="hidden sm:inline text-[9px] uppercase tracking-widest text-[#DFA437] font-serif-vintage leading-tight">
         Empório Sabor da Terra
       </span>
-      <span class="text-xs sm:text-sm font-bold tracking-tight">
-        ← Voltar à Loja
+      <span class="text-xs sm:text-sm font-bold tracking-tight whitespace-nowrap">
+        <span class="sm:hidden">← Loja</span>
+        <span class="hidden sm:inline">← Voltar à Loja</span>
       </span>
     </div>
   </a>
 
   <!-- Top-Right Action Group: Cart & WhatsApp -->
-  <div class="fixed top-5 right-5 z-50 flex items-center gap-2.5 sm:gap-3">
+  <div class="fixed top-4 sm:top-5 right-3 sm:right-5 z-50 flex items-center gap-1.5 sm:gap-3">
     <!-- Shopping Cart Button Linking Directly to carrinho.html -->
     <a href="carrinho.html"
-      class="cart-trigger-btn group flex items-center gap-2.5 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-black/65 hover:bg-black/90 text-white backdrop-blur-md border border-[#DFA437]/50 hover:border-[#DFA437] transition-all duration-300 shadow-2xl hover:scale-105 cursor-pointer"
+      class="cart-trigger-btn group flex items-center gap-1.5 sm:gap-2.5 p-2 sm:px-5 sm:py-3 rounded-full bg-black/65 hover:bg-black/90 text-white backdrop-blur-md border border-[#DFA437]/50 hover:border-[#DFA437] transition-all duration-300 shadow-2xl hover:scale-105 cursor-pointer"
       title="Ver Página do Carrinho de Compras">
       <div class="relative flex items-center">
         <iconify-icon icon="solar:bag-5-bold-duotone" width="18" class="text-[#DFA437]"></iconify-icon>
         <span
-          class="cart-count-badge absolute -top-2.5 -right-3 w-5 h-5 rounded-full bg-[#B8482A] text-white text-[10px] font-extrabold items-center justify-center border-2 border-[#0E0906] hidden">0</span>
+          class="cart-count-badge absolute -top-2 -right-2.5 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#B8482A] text-white text-[9px] sm:text-[10px] font-extrabold items-center justify-center border-2 border-[#0E0906] hidden">0</span>
       </div>
-      <span class="text-xs sm:text-sm font-bold tracking-tight">Carrinho</span>
+      <span class="hidden sm:inline text-xs sm:text-sm font-bold tracking-tight">Carrinho</span>
       <span
         class="cart-total-badge hidden sm:inline text-xs font-bold text-[#DFA437] bg-white/10 px-2.5 py-0.5 rounded-full border border-white/10">R$
         0,00</span>
@@ -86,7 +87,7 @@
     <!-- Top-Right Discreet WhatsApp Order Button -->
     <a href="https://wa.me/5518991621203?text=Ol%C3%A1!%20Estou%20vendo%20as%20Prateleiras%20do%20Emp%C3%B3rio%20e%20gostaria%20de%20fazer%20um%20pedido."
       target="_blank" rel="noopener noreferrer"
-      class="flex items-center gap-2 px-4 py-2.5 sm:py-3 rounded-full bg-[#25D366]/90 hover:bg-[#25D366] text-white backdrop-blur-md border border-[#25D366]/50 shadow-xl transition-all duration-300 hover:scale-105 text-xs font-bold"
+      class="flex items-center justify-center p-2 sm:px-4 sm:py-3 rounded-full bg-[#25D366]/90 hover:bg-[#25D366] text-white backdrop-blur-md border border-[#25D366]/50 shadow-xl transition-all duration-300 hover:scale-105 text-xs font-bold"
       title="Falar no WhatsApp (18) 99162-1203">
       <iconify-icon icon="logos:whatsapp-icon" width="18"></iconify-icon>
       <span class="hidden sm:inline">WhatsApp</span>

@@ -1095,7 +1095,7 @@ function updateRewardAndStickyBars() {
     }
   }
 
-  // Update Mobile Sticky Cart Bar
+  // Update Mobile Sticky Cart Bar & Coordinate Floating WA Button
   const stickyBar = document.getElementById('mobile-sticky-cart-bar');
   const stickyCount = document.getElementById('mobile-sticky-count');
   const stickyTotal = document.getElementById('mobile-sticky-total');
@@ -1103,10 +1103,12 @@ function updateRewardAndStickyBars() {
   if (stickyBar) {
     if (totalCount > 0) {
       stickyBar.classList.remove('translate-y-full');
+      document.body.classList.add('has-mobile-cart');
       if (stickyCount) stickyCount.textContent = `${totalCount} ${totalCount === 1 ? 'item' : 'itens'}`;
       if (stickyTotal) stickyTotal.textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
     } else {
       stickyBar.classList.add('translate-y-full');
+      document.body.classList.remove('has-mobile-cart');
     }
   }
 }
