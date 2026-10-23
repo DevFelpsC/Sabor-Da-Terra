@@ -1,0 +1,1378 @@
+/* ==========================================================================
+   EMPÓRIO SABOR DA TERRA — LUXURY ARTISANAL BRAND DESIGN SYSTEM
+   Artisanal botanical heritage, sensory warm palettes & conversion micro-interactions
+   ========================================================================== */
+
+:root {
+  /* Brand Heritage Palette: Clean, Gourmet, Accessible & Trustworthy */
+  --color-earth-bg: #FAF8F5;
+  --color-earth-surface: #FFFFFF;
+  --color-parchment-deep: #F4EFE6;
+  --color-parchment-border: #E5DFD5;
+  
+  --color-brand-espresso: #18120E;
+  --color-brand-charcoal: #16100B;
+  --color-brand-forest: #1A3628;
+  --color-brand-forest-deep: #11261C;
+  --color-brand-olive: #526343;
+  --color-brand-olive-light: #73845F;
+  --color-brand-terracotta: #B23B1E;
+  --color-brand-paprika: #B23B1E;
+  --color-brand-paprika-dark: #8F2B13;
+  --color-brand-saffron: #C88D25;
+  --color-brand-saffron-light: #E4A638;
+  --color-brand-gold: #C88D25;
+  --color-brand-cream: #FFFDF9;
+  
+  --color-wa-green: #25D366;
+  --color-wa-green-hover: #1EBE5D;
+  --color-wa-glow: rgba(37, 211, 102, 0.4);
+
+  --font-serif-vintage: 'Fraunces', Georgia, serif;
+  --font-editorial: 'Fraunces', Georgia, serif;
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --shadow-subtle: 0 2px 10px rgba(24, 18, 14, 0.04);
+  --shadow-elevated: 0 12px 30px -4px rgba(24, 18, 14, 0.08);
+  --shadow-glow-gold: 0 0 30px rgba(200, 141, 37, 0.25);
+  --shadow-glow-terracotta: 0 0 25px rgba(178, 59, 30, 0.2);
+  --shadow-seal: 0 8px 24px -4px rgba(24, 18, 14, 0.12), 0 0 0 1px rgba(200, 141, 37, 0.3);
+}
+
+/* Base Reset & Custom Scrollbar */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-earth-bg);
+  color: var(--color-brand-espresso);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(223, 164, 55, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 60%, rgba(184, 72, 42, 0.035) 0%, transparent 45%);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EFE6;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CBBA;
+  border-radius: 999px;
+  border: 2px solid #F4EFE6;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BFA98F;
+}
+
+/* Typography Helpers */
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-serif-vintage {
+  font-family: var(--font-serif-vintage);
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-parchment-border);
+}
+
+.glass-panel-dark {
+  background: rgba(22, 16, 11, 0.84);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(223, 164, 55, 0.35);
+}
+
+.glass-pill {
+  background: rgba(255, 253, 249, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 220, 200, 0.85);
+  box-shadow: 0 4px 15px rgba(30, 19, 13, 0.04);
+}
+
+/* Ambient Floating Canvas in Hero */
+#ambient-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Background Watermark Stamp */
+.bg-watermark-seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 900px;
+  height: 900px;
+  background-image: url('../assets/logo-circular.png?v=20261019174107');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.032;
+  filter: grayscale(40%) contrast(120%);
+  pointer-events: none;
+  z-index: 0;
+  animation: watermarkRotate 160s linear infinite;
+}
+
+@keyframes watermarkRotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Keyframe Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-1deg);
+  }
+}
+
+@keyframes pulseGoldGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(223, 164, 55, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(223, 164, 55, 0.55), 0 0 15px rgba(184, 72, 42, 0.3);
+  }
+}
+
+@keyframes pulseWaGlow {
+  0%, 100% {
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+  }
+  50% {
+    box-shadow: 0 14px 35px rgba(37, 211, 102, 0.6), 0 0 20px rgba(37, 211, 102, 0.4);
+  }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinCounterSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: floatSlow 6.5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 7.5s ease-in-out infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulseGoldGlow 4s infinite ease-in-out;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 36s linear infinite;
+}
+
+.animate-spin-counter {
+  animation: spinCounterSlow 48s linear infinite;
+}
+
+/* ==========================================================================
+   OFFICIAL SEAL EMBLEM BADGE (Special 3D Hero Element)
+   ========================================================================== */
+
+.hero-seal-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  box-shadow: var(--shadow-seal);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-seal-badge:hover {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 20px 45px rgba(30, 19, 13, 0.22), 0 0 35px rgba(223, 164, 55, 0.6);
+}
+
+.hero-seal-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  border: 1.5px dashed rgba(223, 164, 55, 0.65);
+  pointer-events: none;
+  animation: spinSlow 40s linear infinite;
+}
+
+.hero-seal-badge:hover .hero-seal-ring {
+  animation-duration: 15s;
+  border-color: rgba(223, 164, 55, 1);
+}
+
+/* Interactive 3D Showcase Frame */
+.hero-showcase-container {
+  perspective: 1200px;
+}
+
+.hero-3d-card {
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.hero-image-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2.25rem;
+  border: 1px solid rgba(232, 220, 200, 0.8);
+  box-shadow: 0 25px 60px -15px rgba(30, 19, 13, 0.35);
+  background-color: #1A3628;
+}
+
+.hero-image-frame img {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.hero-image-frame:hover img {
+  transform: scale(1.03);
+}
+
+/* Luxury Shelf Hero Action Button */
+.btn-shelf-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1E130D 0%, #16100B 100%);
+  border: 1.5px solid rgba(223, 164, 55, 0.55);
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px rgba(22, 16, 11, 0.35), 0 0 25px rgba(223, 164, 55, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-shelf-hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 35%,
+    rgba(223, 164, 55, 0.35) 50%,
+    transparent 65%
+  );
+  transform: rotate(30deg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn-shelf-hero:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: #DFA437;
+  box-shadow: 0 16px 35px rgba(22, 16, 11, 0.45), 0 0 35px rgba(223, 164, 55, 0.4);
+}
+
+.btn-shelf-hero:hover::after {
+  opacity: 1;
+  animation: shimmer 1.4s infinite;
+}
+
+/* Luxury WhatsApp Action Button */
+.btn-wa-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #25D366 0%, #1CAA51 100%);
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-wa-hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 65%
+  );
+  transform: rotate(30deg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn-wa-hero:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 16px 35px rgba(37, 211, 102, 0.45);
+}
+
+.btn-wa-hero:hover::after {
+  opacity: 1;
+  animation: shimmer 1.4s infinite;
+}
+
+/* Secondary Gold Shimmer Button */
+.btn-secondary-luxury {
+  position: relative;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1.5px solid var(--color-parchment-border);
+  color: var(--color-brand-espresso);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary-luxury:hover {
+  background: var(--color-parchment-deep);
+  border-color: var(--color-brand-saffron);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(223, 164, 55, 0.2);
+}
+
+/* Interactive Blend Switcher Tabs */
+.blend-tab {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(232, 220, 200, 0.7);
+}
+
+.blend-tab:hover, .blend-tab.active {
+  background: #FFFFFF;
+  border-color: var(--color-brand-terracotta);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 72, 42, 0.12);
+}
+
+/* Infinite Marquee */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Product Card Hover Dynamics */
+.product-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--color-parchment-border);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -10px rgba(30, 19, 13, 0.12);
+  border-color: var(--color-brand-saffron);
+}
+
+/* Floating WhatsApp Pulse */
+.floating-wa-btn {
+  animation: pulseWaGlow 3s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   SCROLL-DRIVEN FRAME ANIMATION STAGE (Apple-grade interactive frames)
+   ========================================================================== */
+.scroll-frame-stage {
+  position: relative;
+  width: 100%;
+  min-height: 280vh; /* Pacing track height */
+  background-color: #0E0906;
+}
+
+.scroll-frame-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-frame-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+}
+
+/* Ambient Vignette & Contrast Gradients */
+.scroll-frame-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at center, rgba(14, 9, 6, 0.35) 0%, rgba(14, 9, 6, 0.85) 100%),
+    linear-gradient(180deg, rgba(250, 246, 240, 1) 0%, rgba(14, 9, 6, 0.4) 15%, rgba(14, 9, 6, 0.4) 85%, rgba(250, 246, 240, 1) 100%);
+}
+
+/* Floating Scrollytelling Narrative Cards */
+.scroll-story-card {
+  position: absolute;
+  z-index: 10;
+  max-width: 580px;
+  width: calc(100% - 2.5rem);
+  opacity: 0;
+  transform: translateY(30px) scale(0.96);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.scroll-story-card.active {
+  opacity: 1;
+  transform: translateY(0px) scale(1);
+  pointer-events: auto;
+}
+
+/* Luxury Scrolly Progress Tracker */
+.scroll-frame-tracker {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.scroll-tracker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.scroll-tracker-dot.active {
+  height: 24px;
+  background: #DFA437;
+  box-shadow: 0 0 12px rgba(223, 164, 55, 0.8);
+}
+
+/* ==========================================================================
+   IMMERSIVE FULL-PAGE VIRTUAL SHELF EXPERIENCE
+   The whole viewport is composed by the shelf image with jar crop hover effects
+   ========================================================================== */
+
+/* Fullscreen Stage Shell */
+.shelf-fullscreen-shell {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0E0906;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* Atmospheric Ambient Blurred Backdrop (seamless colors on all aspect ratios) */
+.shelf-ambient-backdrop {
+  position: absolute;
+  inset: -30px;
+  background-image: url('../assets/shelf.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(40px) brightness(0.32) saturate(140%);
+  transform: scale(1.1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* The Crisp 16:9 Canvas Stage that fills maximum viewport */
+.shelf-viewport-stage {
+  position: relative;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 */
+  max-height: 100vh;
+  max-width: 177.78vh; /* 16:9 */
+  aspect-ratio: 16 / 9;
+  z-index: 10;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.85);
+  border-radius: 0.5rem;
+  overflow: visible;
+}
+
+/* Background shelf image */
+.shelf-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  border-radius: 0.5rem;
+  transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Stage spotlight dim layer when a jar is active/hovered */
+.shelf-stage-dimmer {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.65) 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+  z-index: 12;
+}
+
+.shelf-viewport-stage.has-jar-hover .shelf-stage-dimmer {
+  opacity: 0.45;
+}
+
+/* ==========================================================================
+   INTERACTIVE JAR OUTER GLOW OVERLAY
+   The jars in shelf.jpg remain untouched as is.
+   On hover, a pure outer glow and luminous contour outline illuminates the jar.
+   ========================================================================== */
+
+/* Full-bleed SVG Overlay mapped to 2752x1536 stage */
+.shelf-contour-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.jar-glow-group {
+  cursor: pointer;
+  pointer-events: auto;
+  outline: none;
+}
+
+/* Invisible Hit Area catching all hover and click interactions across the jar body */
+.jar-hit-area {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 20px;
+  cursor: pointer;
+  transition: fill 0.35s ease;
+}
+
+.jar-glow-group:hover .jar-hit-area,
+.jar-glow-group.active .jar-hit-area {
+  fill: rgba(255, 255, 255, 0.02);
+}
+
+/* Outer Glow Halo (atmospheric ambient blur radiating outward from jar contour) */
+.jar-glow-halo {
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), stroke-width 0.4s ease;
+  pointer-events: none;
+}
+
+.halo-especiarias {
+  stroke: rgba(230, 81, 0, 0.9);
+  stroke-width: 10px;
+  filter: 
+    drop-shadow(0 0 10px #FF5722)
+    drop-shadow(0 0 24px #B8482A)
+    drop-shadow(0 0 50px rgba(184, 72, 42, 0.85))
+    drop-shadow(0 0 80px rgba(184, 72, 42, 0.45));
+}
+
+.halo-doces {
+  stroke: rgba(255, 213, 79, 0.9);
+  stroke-width: 10px;
+  filter: 
+    drop-shadow(0 0 10px #FFD54F)
+    drop-shadow(0 0 24px #DFA437)
+    drop-shadow(0 0 50px rgba(223, 164, 55, 0.85))
+    drop-shadow(0 0 80px rgba(223, 164, 55, 0.45));
+}
+
+.halo-conservas {
+  stroke: rgba(74, 222, 128, 0.9);
+  stroke-width: 10px;
+  filter: 
+    drop-shadow(0 0 10px #4ADE80)
+    drop-shadow(0 0 24px #25D366)
+    drop-shadow(0 0 50px rgba(37, 211, 102, 0.85))
+    drop-shadow(0 0 80px rgba(37, 211, 102, 0.45));
+}
+
+/* Crisp Luminous Core Outline */
+.jar-glow-outline {
+  fill: transparent;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.outline-especiarias {
+  stroke: #FFA07A;
+}
+
+.outline-doces {
+  stroke: #FFF3B0;
+}
+
+.outline-conservas {
+  stroke: #A7F3D0;
+}
+
+/* Illuminated Hover State */
+.jar-glow-group:hover .jar-glow-halo,
+.jar-glow-group.active .jar-glow-halo {
+  opacity: 1;
+}
+
+.jar-glow-group:hover .jar-glow-outline,
+.jar-glow-group.active .jar-glow-outline {
+  opacity: 0.95;
+}
+
+/* ==========================================================================
+   FLOATING JAR UI OVERLAYS (Tags and Quick Action Drawer Cards)
+   ========================================================================== */
+.jar-ui-slot {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 30;
+}
+
+/* Floating Jar Pill Tag (above jar lid) */
+.jar-float-tag {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 1rem;
+  background: rgba(18, 12, 8, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: jarTagGentleBounce 3.5s ease-in-out infinite;
+}
+
+@keyframes jarTagGentleBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-4px);
+    border-color: rgba(223, 164, 55, 0.6);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(223, 164, 55, 0.25);
+  }
+}
+
+.jar-ui-slot.active .jar-float-tag,
+.jar-ui-slot:hover .jar-float-tag {
+  animation: none;
+  transform: translateX(-50%) translateY(-5px) scale(1.06);
+  background: rgba(18, 12, 8, 0.96);
+  border-color: rgba(223, 164, 55, 0.9);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(223, 164, 55, 0.35);
+}
+
+@media (max-width: 640px) {
+  .jar-float-tag {
+    top: 10%;
+    padding: 0.25rem 0.55rem;
+    font-size: 0.7rem;
+    border-radius: 0.85rem;
+    gap: 0.15rem;
+  }
+}
+
+/* Center Click Indicator with Hand Icon on Jar Hover */
+.jar-center-click-indicator {
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px) scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  background: rgba(18, 12, 8, 0.94);
+  border: 1.5px solid rgba(223, 164, 55, 0.85);
+  backdrop-filter: blur(20px);
+  color: #FFFFFF;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(223, 164, 55, 0.4);
+  white-space: nowrap;
+  z-index: 50;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.jar-ui-slot.active .jar-center-click-indicator,
+.jar-ui-slot:hover .jar-center-click-indicator {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.jar-center-click-indicator:hover {
+  transform: translateX(-50%) translateY(-2px) scale(1.06);
+  border-color: #DFA437;
+  background: rgba(18, 12, 8, 0.98);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 40px rgba(223, 164, 55, 0.6);
+}
+
+.jar-hand-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  background: rgba(223, 164, 55, 0.2);
+  color: #DFA437;
+}
+
+.jar-hand-tap-icon {
+  font-size: 1.2rem;
+  animation: handTapBounce 1.4s ease-in-out infinite;
+}
+
+@keyframes handTapBounce {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(0.86) translateY(2px);
+  }
+}
+
+.jar-hand-pulse-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(223, 164, 55, 0.6);
+  animation: handPulseRing 1.8s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes handPulseRing {
+  0% {
+    transform: scale(0.85);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.jar-center-click-text {
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+@media (max-width: 640px) {
+  .jar-center-click-indicator {
+    top: 50%;
+    padding: 0.35rem 0.75rem;
+    gap: 0.35rem;
+  }
+  .jar-hand-icon-wrap {
+    width: 20px;
+    height: 20px;
+  }
+  .jar-hand-tap-icon {
+    font-size: 0.95rem;
+  }
+  .jar-center-click-text {
+    font-size: 0.64rem;
+  }
+}
+
+/* Floating action drawer card under hovered jar */
+.jar-hover-card {
+  position: absolute;
+  top: 86%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(18, 12, 8, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(16px);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+  z-index: 60;
+}
+
+.jar-ui-slot.active .jar-hover-card,
+.jar-ui-slot:hover .jar-hover-card {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================================================
+   SHOPPING CART & PRODUCT MENU STYLES
+   ========================================================================== */
+
+/* Cart Counter Badge Pop Animation */
+@keyframes badgePop {
+  0% { transform: scale(0.6); }
+  50% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+.badge-pop {
+  animation: badgePop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Custom Smooth Scrollbar for Drawer & Modal */
+.custom-drawer-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-drawer-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+}
+
+.custom-drawer-scroll::-webkit-scrollbar-thumb {
+  background: rgba(223, 164, 55, 0.4);
+  border-radius: 999px;
+}
+
+.custom-drawer-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(223, 164, 55, 0.7);
+}
+
+/* Line Clamping Utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Active Jar Tab Button */
+.jar-tab-btn {
+  user-select: none;
+  cursor: pointer;
+}
+
+.jar-tab-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Ensure cart drawer NEVER blocks page clicks when closed or hidden */
+#sabor-cart-drawer.hidden,
+#sabor-cart-drawer.opacity-0,
+#sabor-cart-drawer.pointer-events-none,
+#sabor-cart-drawer.hidden *,
+#sabor-cart-drawer.opacity-0 *,
+#sabor-cart-drawer.pointer-events-none * {
+  pointer-events: none !important;
+}
+
+#sabor-cart-drawer.opacity-100.pointer-events-auto,
+#sabor-cart-drawer.opacity-100.pointer-events-auto #sabor-cart-backdrop,
+#sabor-cart-drawer.opacity-100.pointer-events-auto #sabor-cart-panel,
+#sabor-cart-drawer.opacity-100.pointer-events-auto #sabor-cart-panel * {
+  pointer-events: auto !important;
+}
+
+/* ==========================================================================
+   CINEMATIC HERO-TO-SHELF EXPANDING PORTAL TRANSITION
+   ========================================================================== */
+
+#shelf-portal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#shelf-portal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#shelf-portal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: #0E0906;
+  opacity: 0;
+  transition: opacity 0.75s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: opacity;
+}
+
+#shelf-portal-box {
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.95), 0 0 70px rgba(223, 164, 55, 0.3);
+  will-change: top, left, width, height, border-radius;
+  background-color: #0E0906;
+}
+
+#portal-hero-start-img {
+  will-change: transform, opacity;
+  transform-origin: center center;
+}
+
+#portal-shelf-fade-img {
+  will-change: transform, opacity;
+  transform-origin: center center;
+}
+
+#portal-seal-indicator {
+  will-change: transform, opacity;
+}
+
+.bg-radial-vignette {
+  background: radial-gradient(circle at center, rgba(14, 9, 6, 0.1) 0%, rgba(14, 9, 6, 0.8) 100%);
+}
+
+/* Shelf Entrance Match-Cut on prateleiras.html */
+.shelf-viewport-stage.shelf-enter-anim {
+  opacity: 0.92;
+  transform: scale(1.02);
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.shelf-viewport-stage.shelf-enter-anim.shelf-entered {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Smooth Jar Modal Transitions */
+#jar-modal {
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#jar-modal.modal-visible {
+  opacity: 1;
+}
+
+#jar-modal > div {
+  transform: scale(0.95);
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#jar-modal.modal-visible > div {
+  transform: scale(1);
+}
+
+/* ==========================================================================
+   HOMEPAGE VITRINE, COMBOS, COMPARISON TABLE & FAQ EXPANSION
+   High-conversion e-commerce components for Empório Sabor da Terra
+   ========================================================================== */
+
+/* Category Filter Tabs */
+.catalog-filter-btn {
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: 1px solid var(--color-parchment-border);
+  background: #FFFFFF;
+  color: var(--color-brand-espresso);
+}
+
+.catalog-filter-btn:hover {
+  border-color: var(--color-brand-terracotta);
+  color: var(--color-brand-terracotta);
+  transform: translateY(-1px);
+}
+
+.catalog-filter-btn.active {
+  background: var(--color-brand-espresso);
+  color: #FFFFFF;
+  border-color: var(--color-brand-espresso);
+  box-shadow: 0 4px 14px rgba(24, 18, 14, 0.15);
+}
+
+/* Product Card Premium Styles */
+.product-card-v2 {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(229, 223, 213, 0.8);
+  background: #FFFFFF;
+}
+
+.product-card-v2:hover {
+  transform: translateY(-4px);
+  border-color: rgba(178, 59, 30, 0.4);
+  box-shadow: 0 16px 36px -8px rgba(24, 18, 14, 0.08);
+}
+
+/* Product Stepper / Add Button */
+.product-stepper-btn {
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.product-stepper-btn:active {
+  transform: scale(0.92);
+}
+
+/* Combo Card Highlight */
+.combo-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 2px solid #E5DFD5;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.combo-card:hover {
+  border-color: var(--color-brand-terracotta);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(178, 59, 30, 0.12);
+}
+
+.combo-card.featured {
+  border-color: var(--color-brand-terracotta);
+  background: linear-gradient(180deg, #FFFDFB 0%, #FAF6F0 100%);
+}
+
+/* Comparison Table Styling */
+.comparison-card-industrial {
+  background: #F7F5F2;
+  border: 1px solid #E5DFD5;
+}
+
+.comparison-card-pure {
+  background: linear-gradient(145deg, #1A3628 0%, #11261C 100%);
+  border: 1px solid rgba(200, 141, 37, 0.4);
+  box-shadow: 0 20px 50px -10px rgba(26, 54, 40, 0.3);
+}
+
+/* FAQ Accordion */
+.faq-accordion-item {
+  border: 1px solid #E5DFD5;
+  background: #FFFFFF;
+  border-radius: 1rem;
+  transition: all 0.25s ease;
+}
+
+.faq-accordion-item.open {
+  border-color: var(--color-brand-terracotta);
+  box-shadow: 0 8px 24px -4px rgba(24, 18, 14, 0.06);
+}
+
+.faq-accordion-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
+}
+
+.faq-accordion-item.open .faq-accordion-body {
+  max-height: 300px;
+}
+
+.faq-accordion-icon {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-accordion-item.open .faq-accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* Testimonial Card */
+.review-card {
+  background: #FFFFFF;
+  border: 1px solid #E5DFD5;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -6px rgba(24, 18, 14, 0.08);
+}
+
+/* ==========================================================================
+   EXPANDABLE NAVIGATION DRAWER (Slide-in Menu)
+   ========================================================================== */
+.nav-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(24, 18, 14, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-drawer-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 400px;
+  background-color: #FAF8F5;
+  border-left: 1px solid var(--color-parchment-border);
+  box-shadow: -12px 0 35px rgba(24, 18, 14, 0.12);
+  z-index: 100;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-drawer-panel.open {
+  transform: translateX(0);
+}
+
+.nav-drawer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: 0.875rem;
+  color: var(--color-brand-espresso);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.nav-drawer-link:hover {
+  background-color: #FFFFFF;
+  color: var(--color-brand-terracotta);
+  transform: translateX(3px);
+  box-shadow: 0 2px 8px rgba(24, 18, 14, 0.04);
+}
+
+.nav-drawer-link.featured-highlight {
+  background: rgba(178, 59, 30, 0.06);
+  border: 1px solid rgba(178, 59, 30, 0.15);
+  color: var(--color-brand-terracotta);
+}
+
+.nav-drawer-link.featured-highlight:hover {
+  background: rgba(178, 59, 30, 0.12);
+}
+
+/* ==========================================================================
+   PRODUCT QUICK-VIEW MODAL (Ficha Técnica & Harmonização)
+   ========================================================================== */
+.quickview-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(24, 18, 14, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 120;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.quickview-modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.quickview-modal-dialog {
+  background-color: #FAF8F5;
+  border: 1px solid var(--color-parchment-border);
+  box-shadow: 0 25px 60px -15px rgba(24, 18, 14, 0.25);
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.95) translateY(12px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quickview-modal-backdrop.open .quickview-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+/* ==========================================================================
+   ADD-TO-CART TOAST NOTIFICATION
+   ========================================================================== */
+#cart-toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 130;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  #cart-toast-container {
+    bottom: 5.5rem;
+    left: 1rem;
+    right: 1rem;
+  }
+}
+
+.cart-toast {
+  background: rgba(24, 18, 14, 0.95);
+  color: #FFFFFF;
+  border: 1px solid rgba(200, 141, 37, 0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 0.75rem 1.125rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  transform: translateY(16px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+.cart-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   FREE SHIPPING / GIFT REWARD PROGRESS BAR
+   ========================================================================== */
+.reward-progress-track {
+  background: #E5DFD5;
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.reward-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #C88D25, #25D366);
+  border-radius: 999px;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reward-progress-fill.unlocked {
+  background: linear-gradient(90deg, #25D366, #1EBE5D);
+}
+
+
+
+
+
+
+
+
+

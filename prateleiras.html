@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prateleira do Empório — Cardápio &amp; Pedidos — Sabor da Terra</title>
+  <meta name="description"
+    content="Vitrine imersiva dos potes de Especiarias, Doces e Conservas artesanais do Empório Sabor da Terra. Monte seu pedido com preços em R$.">
+  <link rel="icon" type="image/png" href="assets/logo-circular.png?v=20261019174107">
+  <link rel="apple-touch-icon" href="assets/logo-circular.png?v=20261019174107">
+  <meta name="theme-color" content="#0E0906">
+  <link rel="canonical" href="https://sabordaterraemporio.com.br/prateleiras.html">
+
+  <!-- Open Graph / WhatsApp / Facebook Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sabordaterraemporio.com.br/prateleiras.html">
+  <meta property="og:title" content="Prateleira do Empório — Cardápio &amp; Pedidos — Sabor da Terra">
+  <meta property="og:description" content="Vitrine interativa dos potes de Especiarias, Doces de Fazenda e Conservas artesanais. Monte seu pedido com preços em R$.">
+  <meta property="og:image" content="https://sabordaterraemporio.com.br/assets/shelf.jpg">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Empório Sabor da Terra">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prateleira do Empório — Sabor da Terra">
+  <meta name="twitter:description" content="Vitrine interativa dos potes artesanais de especiarias, doces e conservas.">
+  <meta name="twitter:image" content="https://sabordaterraemporio.com.br/assets/shelf.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Fraunces & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Iconify Icons CDN -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- Custom Design System Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-[#0E0906] text-white antialiased overflow-hidden selection:bg-[#B8482A] selection:text-white">
+
+  <!-- =========================================================================
+       MINIMAL FLOATING HEADER: BACK TO STORE BUTTON & UNIVERSAL CART TRIGGER
+       ========================================================================= -->
+  <a href="index.html"
+    class="fixed top-5 left-5 z-50 group flex items-center gap-3 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-black/60 hover:bg-black/85 text-white backdrop-blur-md border border-white/20 hover:border-[#DFA437] transition-all duration-300 shadow-2xl hover:scale-105"
+    title="Voltar para a Loja">
+    <div
+      class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#DFA437] group-hover:text-black transition-colors">
+      <iconify-icon icon="solar:arrow-left-linear" width="16"></iconify-icon>
+    </div>
+    <div class="flex flex-col text-left">
+      <span class="text-[9px] uppercase tracking-widest text-[#DFA437] font-serif-vintage leading-tight">
+        Empório Sabor da Terra
+      </span>
+      <span class="text-xs sm:text-sm font-bold tracking-tight">
+        ← Voltar à Loja
+      </span>
+    </div>
+  </a>
+
+  <!-- Top-Right Action Group: Cart & WhatsApp -->
+  <div class="fixed top-5 right-5 z-50 flex items-center gap-2.5 sm:gap-3">
+    <!-- Shopping Cart Button Linking Directly to carrinho.html -->
+    <a href="carrinho.html"
+      class="cart-trigger-btn group flex items-center gap-2.5 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-black/65 hover:bg-black/90 text-white backdrop-blur-md border border-[#DFA437]/50 hover:border-[#DFA437] transition-all duration-300 shadow-2xl hover:scale-105 cursor-pointer"
+      title="Ver Página do Carrinho de Compras">
+      <div class="relative flex items-center">
+        <iconify-icon icon="solar:bag-5-bold-duotone" width="18" class="text-[#DFA437]"></iconify-icon>
+        <span
+          class="cart-count-badge absolute -top-2.5 -right-3 w-5 h-5 rounded-full bg-[#B8482A] text-white text-[10px] font-extrabold items-center justify-center border-2 border-[#0E0906] hidden">0</span>
+      </div>
+      <span class="text-xs sm:text-sm font-bold tracking-tight">Carrinho</span>
+      <span
+        class="cart-total-badge hidden sm:inline text-xs font-bold text-[#DFA437] bg-white/10 px-2.5 py-0.5 rounded-full border border-white/10">R$
+        0,00</span>
+    </a>
+
+    <!-- Top-Right Discreet WhatsApp Order Button -->
+    <a href="https://wa.me/5518991621203?text=Ol%C3%A1!%20Estou%20vendo%20as%20Prateleiras%20do%20Emp%C3%B3rio%20e%20gostaria%20de%20fazer%20um%20pedido."
+      target="_blank" rel="noopener noreferrer"
+      class="flex items-center gap-2 px-4 py-2.5 sm:py-3 rounded-full bg-[#25D366]/90 hover:bg-[#25D366] text-white backdrop-blur-md border border-[#25D366]/50 shadow-xl transition-all duration-300 hover:scale-105 text-xs font-bold"
+      title="Falar no WhatsApp (18) 99162-1203">
+      <iconify-icon icon="logos:whatsapp-icon" width="18"></iconify-icon>
+      <span class="hidden sm:inline">WhatsApp</span>
+    </a>
+  </div>
+
+
+  <!-- =========================================================================
+       THE IMMERSIVE FULLSCREEN SHELF: WHOLE PAGE COMPOSED BY THE IMAGE
+       ========================================================================= -->
+  <main class="shelf-fullscreen-shell">
+
+    <!-- Atmospheric Blurred Backdrop Filling Entire Screen -->
+    <div class="shelf-ambient-backdrop"></div>
+
+    <!-- Crisp 16:9 Viewport Stage that Fills the Window -->
+    <div id="shelf-stage" class="shelf-viewport-stage">
+
+      <!-- Base Full-Resolution Shelf Image -->
+      <img src="assets/shelf.jpg"
+        alt="Prateleira de Madeira do Empório Sabor da Terra com Potes de Especiarias, Doces e Conservas"
+        class="shelf-main-image">
+
+      <!-- Dark Vignette Spotlight Overlay (activates when any jar is hovered) -->
+      <div class="shelf-stage-dimmer"></div>
+
+
+      <!-- =====================================================================
+           SVG CONTOUR OUTER GLOW & INTERACTIVE HIT AREA OVERLAY
+           Jars in shelf.jpg remain untouched as is. Hover triggers an outer glow.
+           ===================================================================== -->
+      <svg class="shelf-contour-svg" viewBox="0 0 2752 1536" preserveAspectRatio="none">
+
+        <!-- Jar 1: Especiarias Interactive Contour -->
+        <g class="jar-glow-group" data-jar="especiarias" tabindex="0" role="button" aria-label="Pote 01 • Especiarias">
+          <path class="jar-glow-halo halo-especiarias"
+            d="M 618 388 L 710 386 L 810 385 L 910 386 L 1002 388 L 1006 400 L 1005 420 L 1005 440 L 1008 455 L 1010 466 L 1005 472 L 996 480 L 1003 492 L 993 508 L 997 528 L 1010 548 L 1026 568 L 1042 595 L 1048 620 L 1048 750 L 1048 950 L 1048 1100 L 1048 1200 L 1046 1225 L 1035 1248 L 1000 1264 L 930 1271 L 810 1271 L 700 1271 L 630 1264 L 595 1248 L 584 1225 L 572 1200 L 572 1100 L 572 950 L 572 750 L 572 620 L 578 595 L 594 568 L 610 548 L 623 528 L 625 508 L 615 492 L 622 480 L 615 472 L 608 466 L 610 455 L 614 440 L 614 420 L 614 400 Z" />
+          <path class="jar-glow-outline outline-especiarias"
+            d="M 618 388 L 710 386 L 810 385 L 910 386 L 1002 388 L 1006 400 L 1005 420 L 1005 440 L 1008 455 L 1010 466 L 1005 472 L 996 480 L 1003 492 L 993 508 L 997 528 L 1010 548 L 1026 568 L 1042 595 L 1048 620 L 1048 750 L 1048 950 L 1048 1100 L 1048 1200 L 1046 1225 L 1035 1248 L 1000 1264 L 930 1271 L 810 1271 L 700 1271 L 630 1264 L 595 1248 L 584 1225 L 572 1200 L 572 1100 L 572 950 L 572 750 L 572 620 L 578 595 L 594 568 L 610 548 L 623 528 L 625 508 L 615 492 L 622 480 L 615 472 L 608 466 L 610 455 L 614 440 L 614 420 L 614 400 Z" />
+          <path class="jar-hit-area"
+            d="M 618 388 L 710 386 L 810 385 L 910 386 L 1002 388 L 1006 400 L 1005 420 L 1005 440 L 1008 455 L 1010 466 L 1005 472 L 996 480 L 1003 492 L 993 508 L 997 528 L 1010 548 L 1026 568 L 1042 595 L 1048 620 L 1048 750 L 1048 950 L 1048 1100 L 1048 1200 L 1046 1225 L 1035 1248 L 1000 1264 L 930 1271 L 810 1271 L 700 1271 L 630 1264 L 595 1248 L 584 1225 L 572 1200 L 572 1100 L 572 950 L 572 750 L 572 620 L 578 595 L 594 568 L 610 548 L 623 528 L 625 508 L 615 492 L 622 480 L 615 472 L 608 466 L 610 455 L 614 440 L 614 420 L 614 400 Z" />
+        </g>
+
+        <!-- Jar 2: Doces Interactive Contour -->
+        <g class="jar-glow-group" data-jar="doces" tabindex="0" role="button" aria-label="Pote 02 • Doces">
+          <path class="jar-glow-halo halo-doces"
+            d="M 1205 385 L 1260 372 L 1400 370 L 1530 374 L 1625 388 L 1635 420 L 1625 455 L 1605 465 L 1630 480 L 1640 495 L 1680 515 L 1725 540 L 1730 560 L 1732 575 L 1710 610 L 1680 625 L 1674 635 L 1674 750 L 1674 950 L 1674 1100 L 1674 1200 L 1672 1225 L 1658 1248 L 1620 1264 L 1540 1270 L 1410 1270 L 1300 1270 L 1220 1264 L 1182 1248 L 1168 1225 L 1162 1200 L 1162 1100 L 1162 950 L 1162 750 L 1162 635 L 1162 625 L 1140 610 L 1128 590 L 1118 560 L 1115 525 L 1140 490 L 1165 475 L 1188 465 L 1195 440 L 1200 415 Z" />
+          <path class="jar-glow-outline outline-doces"
+            d="M 1205 385 L 1260 372 L 1400 370 L 1530 374 L 1625 388 L 1635 420 L 1625 455 L 1605 465 L 1630 480 L 1640 495 L 1680 515 L 1725 540 L 1730 560 L 1732 575 L 1710 610 L 1680 625 L 1674 635 L 1674 750 L 1674 950 L 1674 1100 L 1674 1200 L 1672 1225 L 1658 1248 L 1620 1264 L 1540 1270 L 1410 1270 L 1300 1270 L 1220 1264 L 1182 1248 L 1168 1225 L 1162 1200 L 1162 1100 L 1162 950 L 1162 750 L 1162 635 L 1162 625 L 1140 610 L 1128 590 L 1118 560 L 1115 525 L 1140 490 L 1165 475 L 1188 465 L 1195 440 L 1200 415 Z" />
+          <path class="jar-hit-area"
+            d="M 1205 385 L 1260 372 L 1400 370 L 1530 374 L 1625 388 L 1635 420 L 1625 455 L 1605 465 L 1630 480 L 1640 495 L 1680 515 L 1725 540 L 1730 560 L 1732 575 L 1710 610 L 1680 625 L 1674 635 L 1674 750 L 1674 950 L 1674 1100 L 1674 1200 L 1672 1225 L 1658 1248 L 1620 1264 L 1540 1270 L 1410 1270 L 1300 1270 L 1220 1264 L 1182 1248 L 1168 1225 L 1162 1200 L 1162 1100 L 1162 950 L 1162 750 L 1162 635 L 1162 625 L 1140 610 L 1128 590 L 1118 560 L 1115 525 L 1140 490 L 1165 475 L 1188 465 L 1195 440 L 1200 415 Z" />
+        </g>
+
+        <!-- Jar 3: Conservas Interactive Contour -->
+        <g class="jar-glow-group" data-jar="conservas" tabindex="0" role="button" aria-label="Pote 03 • Conservas">
+          <path class="jar-glow-halo halo-conservas"
+            d="M 1840 385 L 1950 376 L 2070 375 L 2190 376 L 2285 380 L 2300 395 L 2302 415 L 2302 442 L 2298 456 L 2288 460 L 2280 468 L 2290 480 L 2282 498 L 2292 525 L 2308 550 L 2325 575 L 2335 600 L 2340 625 L 2340 750 L 2340 950 L 2340 1100 L 2340 1200 L 2338 1225 L 2325 1248 L 2280 1264 L 2180 1271 L 2070 1271 L 1935 1271 L 1855 1264 L 1815 1248 L 1804 1225 L 1798 1200 L 1798 1100 L 1798 950 L 1798 750 L 1798 625 L 1805 600 L 1820 575 L 1845 550 L 1855 525 L 1855 498 L 1848 480 L 1855 468 L 1842 460 L 1838 456 L 1838 442 L 1838 415 Z" />
+          <path class="jar-glow-outline outline-conservas"
+            d="M 1840 385 L 1950 376 L 2070 375 L 2190 376 L 2285 380 L 2300 395 L 2302 415 L 2302 442 L 2298 456 L 2288 460 L 2280 468 L 2290 480 L 2282 498 L 2292 525 L 2308 550 L 2325 575 L 2335 600 L 2340 625 L 2340 750 L 2340 950 L 2340 1100 L 2340 1200 L 2338 1225 L 2325 1248 L 2280 1264 L 2180 1271 L 2070 1271 L 1935 1271 L 1855 1264 L 1815 1248 L 1804 1225 L 1798 1200 L 1798 1100 L 1798 950 L 1798 750 L 1798 625 L 1805 600 L 1820 575 L 1845 550 L 1855 525 L 1855 498 L 1848 480 L 1855 468 L 1842 460 L 1838 456 L 1838 442 L 1838 415 Z" />
+          <path class="jar-hit-area"
+            d="M 1840 385 L 1950 376 L 2070 375 L 2190 376 L 2285 380 L 2300 395 L 2302 415 L 2302 442 L 2298 456 L 2288 460 L 2280 468 L 2290 480 L 2282 498 L 2292 525 L 2308 550 L 2325 575 L 2335 600 L 2340 625 L 2340 750 L 2340 950 L 2340 1100 L 2340 1200 L 2338 1225 L 2325 1248 L 2280 1264 L 2180 1271 L 2070 1271 L 1935 1271 L 1855 1264 L 1815 1248 L 1804 1225 L 1798 1200 L 1798 1100 L 1798 950 L 1798 750 L 1798 625 L 1805 600 L 1820 575 L 1845 550 L 1855 525 L 1855 498 L 1848 480 L 1855 468 L 1842 460 L 1838 456 L 1838 442 L 1838 415 Z" />
+        </g>
+      </svg>
+
+      <!-- Floating Interactive Tags & Action Cards overlaid above/below the jars -->
+      <div class="jar-ui-slot" data-jar="especiarias" style="left: 29.4%;">
+        <!-- Tag at top -->
+        <div class="jar-float-tag group" title="Clique para abrir o cardápio de Especiarias">
+          <span class="jar-tag-action-hint inline-flex items-center gap-1 text-[8px] sm:text-[9px] font-bold text-[#DFA437] bg-white/10 px-2 py-0.5 rounded-full border border-white/10 group-hover:bg-[#DFA437] group-hover:text-black transition-colors shadow-sm leading-none">
+            <iconify-icon icon="material-symbols:touch-app-rounded" width="11" class="animate-bounce"></iconify-icon>
+            <span>Ver Cardápio</span>
+          </span>
+          <div class="flex items-center gap-1.5 leading-tight">
+            <iconify-icon icon="solar:leaf-bold-duotone" width="15" class="text-[#B8482A]"></iconify-icon>
+            <span>Especiarias</span>
+          </div>
+        </div>
+
+        <!-- Center Floating Click Indicator with Animated Hand Icon (Appears on Jar Hover) -->
+        <div class="jar-center-click-indicator" title="Clique no pote para abrir o cardápio">
+          <div class="jar-hand-icon-wrap">
+            <iconify-icon icon="material-symbols:touch-app-rounded" width="20" class="jar-hand-tap-icon"></iconify-icon>
+            <span class="jar-hand-pulse-ring"></span>
+          </div>
+          <span class="jar-center-click-text">Clique para abrir</span>
+        </div>
+
+        <!-- Action Card at bottom -->
+        <div class="jar-hover-card">
+          <span class="text-xs text-white/90 font-medium">11 Temperos &amp; Especiarias • A partir de R$ 4,00</span>
+          <button type="button"
+            class="open-menu-direct-btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#B8482A] hover:bg-[#9E391F] text-white text-[11px] font-bold shadow-sm transition-transform hover:scale-105">
+            <iconify-icon icon="material-symbols:touch-app-rounded" width="15"></iconify-icon>
+            <span>Ver Cardápio &amp; Pedir</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="jar-ui-slot" data-jar="doces" style="left: 51.7%;">
+        <!-- Tag at top -->
+        <div class="jar-float-tag group" title="Clique para abrir o cardápio de Doces">
+          <span class="jar-tag-action-hint inline-flex items-center gap-1 text-[8px] sm:text-[9px] font-bold text-[#DFA437] bg-white/10 px-2 py-0.5 rounded-full border border-white/10 group-hover:bg-[#DFA437] group-hover:text-black transition-colors shadow-sm leading-none">
+            <iconify-icon icon="material-symbols:touch-app-rounded" width="11" class="animate-bounce"></iconify-icon>
+            <span>Ver Cardápio</span>
+          </span>
+          <div class="flex items-center gap-1.5 leading-tight">
+            <iconify-icon icon="solar:cup-star-bold-duotone" width="15" class="text-[#DFA437]"></iconify-icon>
+            <span>Doces</span>
+          </div>
+        </div>
+
+        <!-- Center Floating Click Indicator with Animated Hand Icon (Appears on Jar Hover) -->
+        <div class="jar-center-click-indicator" title="Clique no pote para abrir o cardápio">
+          <div class="jar-hand-icon-wrap">
+            <iconify-icon icon="material-symbols:touch-app-rounded" width="20" class="jar-hand-tap-icon"></iconify-icon>
+            <span class="jar-hand-pulse-ring"></span>
+          </div>
+          <span class="jar-center-click-text">Clique para abrir</span>
+        </div>
+
+        <!-- Action Card at bottom -->
+        <div class="jar-hover-card">
+          <span class="text-xs text-white/90 font-medium">7 Doces de Fazenda • A partir de R$ 10,00</span>
+          <button type="button"
+            class="open-menu-direct-btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#DFA437] hover:bg-[#C89028] text-[#1E130D] text-[11px] font-bold shadow-sm transition-transform hover:scale-105">
+            <iconify-icon icon="material-symbols:touch-app-rounded" width="15"></iconify-icon>
+            <span>Ver Cardápio &amp; Pedir</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="jar-ui-slot" data-jar="conservas" style="left: 75.2%;">
+        <!-- Tag at top -->
+        <div class="jar-float-tag group" title="Clique para abrir o cardápio de Conservas">
+          <span class="jar-tag-action-hint inline-flex items-center gap-1 text-[8px] sm:text-[9px] font-bold text-[#DFA437] bg-white/10 px-2 py-0.5 rounded-full border border-white/10 group-hover:bg-[#DFA437] group-hover:text-black transition-colors shadow-sm leading-none">
+            <iconify-icon icon="material-symbols:touch-app-rounded" width="11" class="animate-bounce"></iconify-icon>
+            <span>Ver Cardápio</span>
+          </span>
+          <div class="flex items-center gap-1.5 leading-tight">
+            <iconify-icon icon="fa6-solid:jar" height="14" class="text-[#25D366]"></iconify-icon>
+            <span>Conservas</span>
+          </div>
+        </div>
+
+        <!-- Center Floating Click Indicator with Animated Hand Icon (Appears on Jar Hover) -->
+        <div class="jar-center-click-indicator" title="Clique no pote para abrir o cardápio">
+          <div class="jar-hand-icon-wrap">
+            <iconify-icon icon="material-symbols:touch-app-rounded" width="20" class="jar-hand-tap-icon"></iconify-icon>
+            <span class="jar-hand-pulse-ring"></span>
+          </div>
+          <span class="jar-center-click-text">Clique para abrir</span>
+        </div>
+
+        <!-- Action Card at bottom -->
+        <div class="jar-hover-card">
+          <span class="text-xs text-white/90 font-medium">6 Conservas Nobres • A partir de R$ 20,00</span>
+          <button type="button"
+            class="open-menu-direct-btn inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white text-[11px] font-bold shadow-sm transition-transform hover:scale-105">
+            <iconify-icon icon="material-symbols:touch-app-rounded" width="15"></iconify-icon>
+            <span>Ver Cardápio &amp; Pedir</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Luxury Interactive Bottom Suggestion Banner -->
+    <div id="shelf-guide-prompt"
+      class="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-40 transition-all duration-400 max-w-[96vw] sm:max-w-2xl w-full px-2 sm:px-4 pointer-events-auto">
+      <div
+        class="relative flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3 px-3.5 sm:px-6 py-2 sm:py-3 rounded-2xl sm:rounded-full bg-[#16100B]/95 text-white backdrop-blur-xl border border-[#DFA437]/50 shadow-2xl">
+        
+        <!-- Icon & Descriptive Suggestion -->
+        <div class="flex items-center gap-2.5 sm:gap-3 text-left w-full sm:w-auto min-w-0">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#DFA437]/20 border border-[#DFA437]/60 flex items-center justify-center shrink-0">
+            <iconify-icon icon="solar:hand-stars-bold-duotone" width="16" class="text-[#DFA437] animate-pulse"></iconify-icon>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <!-- Badge placed ABOVE the headline -->
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="text-[9px] sm:text-[10px] font-extrabold text-[#DFA437] uppercase tracking-wider bg-[#DFA437]/15 px-2 py-0.5 rounded-full border border-[#DFA437]/30">
+                Toque nos potes para abrir o cardápio
+              </span>
+            </div>
+            <span class="text-xs sm:text-sm font-bold text-white tracking-tight leading-tight truncate">
+              Monte seu pedido e adicione itens ao carrinho
+            </span>
+          </div>
+        </div>
+
+        <!-- Quick Action Category Chips -->
+        <div class="flex items-center gap-1.5 shrink-0 w-full sm:w-auto justify-center sm:justify-start pt-1.5 sm:pt-0 border-t sm:border-t-0 sm:border-l border-white/10 sm:pl-3">
+          <button type="button" onclick="openJarModal('especiarias')" 
+            class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-[#B8482A] text-[10px] sm:text-[11px] font-bold text-white transition-all hover:scale-105 border border-white/10 flex items-center gap-1"
+            title="Abrir cardápio de Especiarias">
+            🌿 Especiarias
+          </button>
+          <button type="button" onclick="openJarModal('doces')" 
+            class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-[#DFA437] hover:text-black text-[10px] sm:text-[11px] font-bold text-white transition-all hover:scale-105 border border-white/10 flex items-center gap-1"
+            title="Abrir cardápio de Doces">
+            🍯 Doces
+          </button>
+          <button type="button" onclick="openJarModal('conservas')" 
+            class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-[#25D366] text-[10px] sm:text-[11px] font-bold text-white transition-all hover:scale-105 border border-white/10 flex items-center gap-1"
+            title="Abrir cardápio de Conservas">
+            🫙 Conservas
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- =========================================================================
+       MODAL: FULL JAR PRODUCT MENU (Opens on click for ordering & inspection)
+       ========================================================================= -->
+  <div id="jar-modal"
+    class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6 transition-all duration-300">
+    <div
+      class="relative w-full max-w-2xl sm:max-w-3xl max-h-[92vh] p-5 sm:p-7 rounded-3xl bg-[#16100B]/95 border border-white/20 shadow-2xl text-left overflow-hidden flex flex-col">
+
+      <!-- Close Button -->
+      <button id="jar-modal-close"
+        class="absolute top-4 right-4 sm:top-5 sm:right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center text-sm transition-colors z-30 cursor-pointer"
+        title="Fechar janela">
+        ✕
+      </button>
+
+      <!-- Dynamic Content Populated by shelf.js -->
+      <div id="jar-modal-content" class="relative z-10 flex-1 flex flex-col overflow-hidden"></div>
+    </div>
+  </div>
+
+  <!-- Interactive Logic Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/shelf.js"></script>
+</body>
+
+</html>

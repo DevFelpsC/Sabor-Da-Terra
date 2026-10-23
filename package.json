@@ -1,0 +1,22 @@
+{
+  "name": "emporio-sabor-da-terra",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website institucional e vitrine interativa de temperos, doces e conservas artesanais do Empório Sabor da Terra.",
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "dev": "npx serve -l 3000 ."
+  },
+  "keywords": [
+    "emporio",
+    "sabor-da-terra",
+    "especiarias",
+    "temperos",
+    "doces-artesanais",
+    "conservas",
+    "landing-page",
+    "ecommerce-whatsapp"
+  ],
+  "author": "Empório Sabor da Terra",
+  "license": "UNLICENSED"
+}

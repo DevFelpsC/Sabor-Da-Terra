@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho de Compras — Empório Sabor da Terra</title>
+  <meta name="description"
+    content="Revise os itens do seu carrinho no Empório Sabor da Terra e finalize seu pedido diretamente pelo WhatsApp com atendimento humanizado.">
+  <link rel="icon" type="image/png" href="assets/logo-circular.png?v=20261019174107">
+  <link rel="apple-touch-icon" href="assets/logo-circular.png?v=20261019174107">
+  <meta name="theme-color" content="#FAF6F0">
+  <link rel="canonical" href="https://sabordaterraemporio.com.br/carrinho.html">
+
+  <!-- Open Graph / WhatsApp / Facebook Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sabordaterraemporio.com.br/carrinho.html">
+  <meta property="og:title" content="Carrinho de Compras — Empório Sabor da Terra">
+  <meta property="og:description" content="Revise os itens do seu carrinho e finalize seu pedido diretamente pelo WhatsApp com atendimento humanizado.">
+  <meta property="og:image" content="https://sabordaterraemporio.com.br/assets/logo-circular.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Empório Sabor da Terra">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Carrinho de Compras — Empório Sabor da Terra">
+  <meta name="twitter:description" content="Revise seus itens e faça seu pedido direto no WhatsApp.">
+  <meta name="twitter:image" content="https://sabordaterraemporio.com.br/assets/logo-circular.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Fraunces & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Iconify Icons CDN -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- Custom Design System Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-[#FAF6F0] text-[#1E130D] antialiased selection:bg-[#B8482A] selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- =========================================================================
+       NAVIGATION BAR — STREAMLINED LUXURY ARTISANAL HEADER
+       ========================================================================= -->
+  <nav class="sticky top-0 z-50 w-full bg-[#FAF8F5]/92 backdrop-blur-md border-b border-[#E5DFD5]/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 sm:h-20">
+
+      <!-- Official Brand Logo Lockup -->
+      <a href="index.html" class="flex items-center gap-3 group shrink-0">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white p-0.5 border border-[#C88D25]/50 shadow-xs flex items-center justify-center overflow-hidden group-hover:border-[#B23B1E] transition-all duration-300 shrink-0">
+          <img src="assets/logo-circular.png?v=20261019174107" alt="Selo Oficial Empório Sabor da Terra"
+            class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="flex flex-col">
+          <span class="text-[9px] uppercase font-bold tracking-[0.2em] text-[#B23B1E] font-serif-vintage leading-none mb-0.5">
+            Empório Artesanal
+          </span>
+          <span class="font-heading font-extrabold text-base sm:text-lg tracking-tight text-[#18120E] group-hover:text-[#B23B1E] transition-colors leading-tight">
+            Sabor da Terra
+          </span>
+        </div>
+      </a>
+
+      <!-- Action Navigation Links -->
+      <div class="flex items-center gap-2 sm:gap-2.5">
+        <a href="https://wa.me/5518991621203?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20carrinho%20de%20compras."
+          target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-xs sm:text-sm shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
+          title="Tirar Dúvidas no WhatsApp (18) 99162-1203">
+          <iconify-icon icon="logos:whatsapp-icon" width="16"></iconify-icon>
+          <span class="hidden md:inline">WhatsApp</span>
+        </a>
+
+        <a href="index.html#produtos"
+          class="flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white hover:bg-[#18120E] text-[#18120E] hover:text-white border border-[#E5DFD5] hover:border-[#18120E] transition-all duration-200 text-xs sm:text-sm font-bold shadow-xs">
+          <iconify-icon icon="solar:arrow-left-linear" width="16"></iconify-icon>
+          <span>Continuar Comprando</span>
+        </a>
+
+        <a href="prateleiras.html"
+          class="hidden sm:flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full bg-[#FAF8F5] hover:bg-white text-[#1A3628] border border-[#E5DFD5] hover:border-[#1A3628] transition-all duration-200 text-xs sm:text-sm font-bold shadow-xs">
+          <iconify-icon icon="solar:box-minimalistic-bold-duotone" width="16" class="text-[#C88D25]"></iconify-icon>
+          <span>Prateleiras 3D</span>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================================================================
+       MAIN CONTENT: CART PAGE
+       ========================================================================= -->
+  <main class="flex-1 py-10 sm:py-14">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+
+      <!-- Breadcrumbs & Page Header -->
+      <div class="mb-10 text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#B8482A]/10 text-[#B8482A] text-xs font-bold tracking-widest uppercase mb-3 font-serif-vintage">
+          <iconify-icon icon="solar:bag-5-bold-duotone" width="14"></iconify-icon>
+          <span>Finalização de Pedido</span>
+        </div>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1E130D] mb-3">
+          Seu Carrinho de Compras
+        </h1>
+        <p class="text-gray-600 font-light text-sm sm:text-base max-w-2xl leading-relaxed">
+          Revise seus itens artesanais selecionados, ajuste as quantidades e envie o pedido diretamente para o nosso WhatsApp com um clique.
+        </p>
+      </div>
+
+      <!-- EMPTY STATE (Shown when 0 items in cart) -->
+      <div id="cart-page-empty" class="hidden p-12 sm:p-16 rounded-3xl bg-white border border-[#E8DCC8] shadow-xs text-center max-w-2xl mx-auto">
+        <div class="w-24 h-24 rounded-full bg-[#FAF6F0] border border-[#E8DCC8] flex items-center justify-center mx-auto mb-6 text-gray-400">
+          <iconify-icon icon="solar:cart-large-minimalistic-broken" width="48" class="text-[#DFA437]"></iconify-icon>
+        </div>
+        <h2 class="font-heading font-extrabold text-2xl text-[#1E130D] mb-3">
+          Seu carrinho ainda está vazio
+        </h2>
+        <p class="text-sm text-gray-600 font-light max-w-md mx-auto leading-relaxed mb-8">
+          Navegue pelas prateleiras virtuais do empório e escolha entre nossos 11 temperos puros, 7 doces tradicionais de fazenda e 6 conservas especiais.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <a href="prateleiras.html"
+            class="w-full sm:w-auto px-8 py-4 rounded-full bg-[#DFA437] hover:bg-[#C89028] text-[#1E130D] font-bold text-sm flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-transform hover:scale-105">
+            <iconify-icon icon="solar:box-minimalistic-bold-duotone" width="18"></iconify-icon>
+            <span>Explorar Prateleiras do Empório</span>
+          </a>
+          <a href="index.html#produtos"
+            class="w-full sm:w-auto px-6 py-4 rounded-full bg-[#FAF6F0] hover:bg-white text-[#1E130D] font-semibold text-sm flex items-center justify-center gap-2 border border-[#E8DCC8] transition-colors">
+            <span>Ver Catálogo na Página Inicial</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- FILLED STATE CONTENT (Grid of Items + Sticky Summary) -->
+      <div id="cart-page-content" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+
+        <!-- Left Column: Items List -->
+        <div class="lg:col-span-7 xl:col-span-8 flex flex-col gap-4">
+
+          <div class="flex items-center justify-between pb-3 border-b border-[#E8DCC8]">
+            <div class="flex items-center gap-2">
+              <span class="font-heading font-bold text-lg text-[#1E130D]">Produtos Selecionados</span>
+              <span id="cart-summary-count" class="text-xs font-bold text-[#B8482A] bg-[#B8482A]/10 px-2.5 py-0.5 rounded-full">0 itens</span>
+            </div>
+            <button id="cart-clear-page-btn"
+              class="text-xs text-gray-500 hover:text-red-500 transition-colors flex items-center gap-1 font-medium cursor-pointer">
+              <iconify-icon icon="solar:trash-bin-trash-linear" width="15"></iconify-icon>
+              <span>Esvaziar carrinho</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Products List Container -->
+          <div id="cart-page-items" class="space-y-3.5">
+            <!-- Dynamically populated by cart-page.js -->
+          </div>
+
+          <!-- Action bar under products list -->
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+            <a href="prateleiras.html" class="inline-flex items-center gap-1.5 font-bold text-[#B8482A] hover:text-[#96371D] transition-colors">
+              <iconify-icon icon="solar:arrow-left-linear" width="14"></iconify-icon>
+              <span>Continuar adicionando produtos nas prateleiras</span>
+            </a>
+            <span>Preços oficiais em Reais (R$)</span>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Order Summary & WhatsApp Checkout -->
+        <div class="lg:col-span-5 xl:col-span-4 sticky top-28">
+
+          <div class="p-6 sm:p-7 rounded-3xl bg-white border border-[#E8DCC8] shadow-sm flex flex-col">
+
+            <!-- Summary Title -->
+            <div class="flex items-center justify-between pb-4 mb-4 border-b border-[#E8DCC8]">
+              <h3 class="font-heading font-bold text-xl text-[#1E130D] flex items-center gap-2">
+                <iconify-icon icon="solar:clipboard-list-bold-duotone" class="text-[#DFA437]" width="22"></iconify-icon>
+                <span>Resumo do Pedido</span>
+              </h3>
+              <span class="text-[11px] uppercase tracking-wider text-gray-400 font-serif-vintage">Empório</span>
+            </div>
+
+            <!-- Free Gift Reward Progress Card -->
+            <div class="mb-5 p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD5] space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-[#18120E] flex items-center gap-1.5">
+                  <iconify-icon icon="solar:gift-bold" width="16" class="text-[#C88D25]"></iconify-icon>
+                  <span id="cart-reward-title">Brinde Especial do Empório</span>
+                </span>
+                <span id="cart-reward-badge" class="text-[10px] font-bold text-[#B23B1E] bg-[#B23B1E]/10 px-2 py-0.5 rounded-full">Meta R$ 80</span>
+              </div>
+              <div class="reward-progress-track">
+                <div id="cart-reward-progress-fill" class="reward-progress-fill" style="width: 0%;"></div>
+              </div>
+              <p id="cart-reward-text" class="text-[11px] text-gray-500 font-light leading-snug">
+                Adicione mais <strong class="text-[#B23B1E] font-bold">R$ 80,00</strong> para ganhar 1 sachê de tempero caipira de brinde!
+              </p>
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="space-y-3 mb-6 text-sm text-gray-600 font-light">
+              <div class="flex items-center justify-between">
+                <span>Subtotal dos produtos</span>
+                <span id="cart-summary-subtotal" class="font-bold text-[#1E130D] text-base">R$ 0,00</span>
+              </div>
+              <div class="flex items-start justify-between gap-2 text-xs">
+                <div>
+                  <span class="font-semibold text-gray-700 block">Forma de Envio / Entrega</span>
+                  <span class="text-gray-500 leading-tight">Envio para todo o Brasil ou retirada local</span>
+                </div>
+                <span class="text-[#25D366] font-bold shrink-0 text-right">A combinar no WhatsApp</span>
+              </div>
+              <div class="pt-3 border-t border-[#E8DCC8] flex items-center justify-between text-lg sm:text-xl font-extrabold text-[#1E130D]">
+                <span class="font-heading">Total Geral:</span>
+                <span id="cart-summary-total" class="font-heading text-2xl text-[#B8482A]">R$ 0,00</span>
+              </div>
+            </div>
+
+            <!-- Optional Customer Information (Helps WhatsApp Message Formatting) -->
+            <div class="mb-6 p-4 rounded-2xl bg-[#FAF6F0] border border-[#E8DCC8] space-y-3">
+              <div class="flex items-center gap-1.5 text-xs font-bold text-gray-700 font-serif-vintage uppercase">
+                <iconify-icon icon="solar:user-bold" width="14" class="text-[#DFA437]"></iconify-icon>
+                <span>Seus Dados para o Pedido (Opcional):</span>
+              </div>
+
+              <div>
+                <label for="customer-name" class="block text-[11px] font-medium text-gray-600 mb-1">Seu Nome:</label>
+                <input type="text" id="customer-name" placeholder="Ex: Maria Oliveira"
+                  class="w-full px-3.5 py-2 rounded-xl bg-white border border-[#E8DCC8] text-xs text-[#1E130D] focus:outline-none focus:border-[#DFA437] transition-colors">
+              </div>
+
+              <div>
+                <label for="customer-city" class="block text-[11px] font-medium text-gray-600 mb-1">Cidade / Bairro para Entrega:</label>
+                <input type="text" id="customer-city" placeholder="Ex: Pereira Barreto - SP"
+                  class="w-full px-3.5 py-2 rounded-xl bg-white border border-[#E8DCC8] text-xs text-[#1E130D] focus:outline-none focus:border-[#DFA437] transition-colors">
+              </div>
+
+              <div>
+                <label for="customer-notes" class="block text-[11px] font-medium text-gray-600 mb-1">Observações ou Dúvidas:</label>
+                <input type="text" id="customer-notes" placeholder="Ex: Embalar para presente, sem pimenta..."
+                  class="w-full px-3.5 py-2 rounded-xl bg-white border border-[#E8DCC8] text-xs text-[#1E130D] focus:outline-none focus:border-[#DFA437] transition-colors">
+              </div>
+            </div>
+
+            <!-- WhatsApp Direct Checkout CTA Button -->
+            <a id="cart-whatsapp-checkout-btn" href="#" target="_blank" rel="noopener noreferrer"
+              class="w-full py-4 px-6 rounded-2xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold text-sm sm:text-base flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 mb-3 group text-center">
+              <iconify-icon icon="logos:whatsapp-icon" width="24" class="group-hover:scale-110 transition-transform"></iconify-icon>
+              <div class="flex flex-col text-left">
+                <span>Finalizar Pedido pelo WhatsApp</span>
+                <span class="text-[10px] text-emerald-100 font-normal leading-tight">Enviar lista completa de itens com 1 clique</span>
+              </div>
+            </a>
+
+            <!-- Safe Buying Guarantee Badges -->
+            <div class="pt-3 border-t border-[#E8DCC8]/60 space-y-2 text-[11px] text-gray-500">
+              <div class="flex items-center gap-2">
+                <iconify-icon icon="solar:shield-check-bold" width="16" class="text-[#25D366] shrink-0"></iconify-icon>
+                <span>Atendimento humano direto com o produtor artesanal.</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <iconify-icon icon="solar:card-2-bold" width="16" class="text-[#DFA437] shrink-0"></iconify-icon>
+                <span>Pagamento facilitado: Pix, Cartão ou Dinheiro.</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <iconify-icon icon="solar:box-bold" width="16" class="text-[#B8482A] shrink-0"></iconify-icon>
+                <span>Produtos frescos embalados com rigor e carinho.</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="bg-[#11231A] text-white py-10 border-t border-[#DFA437]/25 mt-16">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo-circular.png?v=20261019174107" alt="Empório Sabor da Terra" class="w-8 h-8 rounded-full border border-[#DFA437]">
+        <span class="font-bold text-white">Empório Sabor da Terra</span>
+        <span>• Temperos, Doces &amp; Conservas</span>
+      </div>
+      <p>© 2026 Empório Sabor da Terra. WhatsApp: (18) 99162-1203</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/cart-page.js"></script>
+</body>
+
+</html>
